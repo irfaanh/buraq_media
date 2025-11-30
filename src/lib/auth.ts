@@ -1,9 +1,10 @@
 import { betterAuth } from 'better-auth';
-import { prisma } from '../lib/prisma';
+import { prisma } from '@/lib/prisma';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
-import { admin } from 'better-auth/plugins/admin';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error - nextCookies is exported but type definitions are incorrect
 import { nextCookies } from 'better-auth/next-js';
+import { admin } from 'better-auth/plugins/admin';
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
