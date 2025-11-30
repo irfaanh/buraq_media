@@ -71,7 +71,7 @@ export default function LatestNewsSection({ news }: LatestNewsSectionProps) {
               </div>
             </div>
             <CardContent className="p-4">
-              <p className="text-sm text-gray-600 line-clamp-3">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {featuredNews.content}
               </p>
             </CardContent>

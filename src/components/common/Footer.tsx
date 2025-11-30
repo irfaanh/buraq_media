@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Youtube, MessageCircle } from 'lucide-react';
+import { Facebook, Youtube, MessageCircle, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const quickLinks1 = [
@@ -56,21 +56,48 @@ export default function Footer() {
 
           {/* Column 3: Subscribe to YouTube */}
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <h3 className="text-lg font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-500">Subscribe to our YOUTUBE channel</h3>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center shadow-lg ring-2 ring-red-500/50">
-                <Youtube className="text-white h-7 w-7" />
-              </div>
+            <h3 className="text-lg font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-500">Subscribe to our YOUTUBE channels</h3>
+            <div className="space-y-4">
+              {/* Channel 1 */}
               <div>
-                <p className="font-bold text-white">Buraq Media</p>
-                <p className="text-xs text-gray-400">News Channel</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center shadow-lg ring-2 ring-red-500/50">
+                    <Youtube className="text-white h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white text-sm">Buraq Media Live</p>
+                    <p className="text-xs text-gray-400">News Channel</p>
+                  </div>
+                </div>
+                <Link href="https://www.youtube.com/@ASIFBURAQmidealivenews" target="_blank" rel="noopener noreferrer">
+                  <Button variant="destructive" size="sm" className="w-full hover:scale-105 transition-transform duration-300 shadow-lg">
+                    <Youtube className="h-4 w-4 mr-2" />
+                    Subscribe Channel 1
+                  </Button>
+                </Link>
+              </div>
+              
+              <div className="border-t border-white/10"></div>
+              
+              {/* Channel 2 */}
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center shadow-lg ring-2 ring-red-500/50">
+                    <Youtube className="text-white h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white text-sm">Buraq Media</p>
+                    <p className="text-xs text-gray-400">News Channel</p>
+                  </div>
+                </div>
+                <Link href="https://www.youtube.com/@ASIFBURAQ" target="_blank" rel="noopener noreferrer">
+                  <Button variant="destructive" size="sm" className="w-full hover:scale-105 transition-transform duration-300 shadow-lg">
+                    <Youtube className="h-4 w-4 mr-2" />
+                    Subscribe Channel 2
+                  </Button>
+                </Link>
               </div>
             </div>
-            <Button variant="destructive" size="sm" className="w-full hover:scale-105 transition-transform duration-300 shadow-lg">
-              <Youtube className="h-4 w-4 mr-2" />
-              YouTube
-            </Button>
-            <p className="text-xs text-gray-400 mt-3 text-center">3K subscribers</p>
           </div>
 
           {/* Column 4: Find us on Facebook */}
@@ -86,13 +113,17 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex gap-2">
-              <Button variant="default" size="sm" className="flex-1 hover:scale-105 transition-transform duration-300 shadow-lg">
-                <Facebook className="h-4 w-4 mr-2" />
-                Follow Page
-              </Button>
-              <Button variant="outline" size="sm" className="flex-1 border-white/20 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300">
-                Share
-              </Button>
+              <Link href="https://www.facebook.com/asif.buraq" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Button variant="default" size="sm" className="w-full hover:scale-105 transition-transform duration-300 shadow-lg">
+                  <Facebook className="h-4 w-4 mr-2" />
+                  Follow Page
+                </Button>
+              </Link>
+              <Link href="https://www.facebook.com/asif.buraq" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Button variant="outline" size="sm" className="w-full border-white/20 text-black hover:bg-white/10 hover:scale-105 transition-all duration-300">
+                  Share
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -100,25 +131,41 @@ export default function Footer() {
         {/* Social Media Icons */}
         <div className="flex items-center justify-center gap-4 mb-10">
           <Link
-            href="#"
+            href="https://www.facebook.com/asif.buraq"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-full hover:bg-blue-700 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
             aria-label="Facebook"
+            title="Buraq Media Facebook"
           >
             <Facebook className="h-6 w-6" />
           </Link>
           <Link
-            href="#"
+            href="https://www.youtube.com/@ASIFBURAQmidealivenews"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center bg-red-600 rounded-full hover:bg-red-700 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
-            aria-label="YouTube"
+            aria-label="YouTube Channel 1"
+            title="Buraq Media Live"
           >
             <Youtube className="h-6 w-6" />
           </Link>
           <Link
-            href="#"
+            href="https://www.youtube.com/@ASIFBURQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 flex items-center justify-center bg-red-600 rounded-full hover:bg-red-700 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+            aria-label="YouTube Channel 2"
+            title="Buraq Media"
+          >
+            <Youtube className="h-6 w-6" />
+          </Link>
+          <Link
+            href="https://www.instagram.com/asif.buraq/"
             className="w-12 h-12 flex items-center justify-center bg-blue-500 rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
             aria-label="Telegram"
           >
-            <MessageCircle className="h-6 w-6" />
+            <Instagram className="h-6 w-6" />
           </Link>
           <Link
             href="#"
@@ -147,11 +194,7 @@ export default function Footer() {
                 www.buraqmedia.com
               </Link>
               <span className="text-white/30">•</span>
-              <span>Copyright 2025, All Rights Reserved</span>
-              <span className="text-white/30">•</span>
-              <span className="flex items-center gap-1">
-                I Love My India <span className="text-red-400 animate-pulse">❤</span>
-              </span>
+              <span>Copyright 2025, All Rights Reserved</span>              
             </div>
             <nav className="flex items-center gap-6 text-sm">
               {quickLinks1.map((link) => (

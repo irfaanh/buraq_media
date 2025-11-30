@@ -29,10 +29,12 @@ export default async function RightSidebar() {
             <p className="text-xs text-gray-500 mt-2">
               Connect with us on Facebook
             </p>
-            <Button className="mt-4 w-full" size="sm">
-              <Facebook className="h-4 w-4 mr-2" />
-              Like Page
-            </Button>
+            <Link href="https://www.facebook.com/asif.buraq" target="_blank" rel="noopener noreferrer" className="block mt-4">
+              <Button className="w-full" size="sm">
+                <Facebook className="h-4 w-4 mr-2" />
+                Like Page
+              </Button>
+            </Link>
           </div>
         </CardContent>
       </Card>
@@ -40,26 +42,48 @@ export default async function RightSidebar() {
       {/* Subscribe to YouTube */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Youtube className="h-5 w-5 text-red-600" />
-            Subscribe to our YOUTUBE channel
+          <CardTitle className="flex items-center gap-2 text-lg">            <Youtube className="h-5 w-5 text-red-600" />
+            Subscribe to our YOUTUBE channels
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-lg font-bold">T</span>
+          <div className="space-y-3">
+            {/* Channel 1 */}
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-lg font-bold">B</span>
+              </div>
+              <div className="flex-1">
+                <p className="font-semibold text-sm">Buraq Media Live</p>
+                <p className="text-xs text-gray-500">News Channel</p>
+              </div>
             </div>
-            <div>
-              <p className="font-semibold text-sm">Buraq Media</p>
-              <p className="text-xs text-gray-500">News Channel</p>
+            <Link href="https://www.youtube.com/@ASIFBURAQmidealivenews" target="_blank" rel="noopener noreferrer">
+              <Button variant="destructive" className="w-full" size="sm">
+                <Youtube className="h-4 w-4 mr-2" />
+                Subscribe Channel 1
+              </Button>
+            </Link>
+            
+            <div className="border-t my-3"></div>
+            
+            {/* Channel 2 */}
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-lg font-bold">B</span>
+              </div>
+              <div className="flex-1">
+                <p className="font-semibold text-sm">Buraq Media</p>
+                <p className="text-xs text-gray-500">News Channel</p>
+              </div>
             </div>
+            <Link href="https://www.youtube.com/@ASIFBURQ" target="_blank" rel="noopener noreferrer">
+              <Button variant="destructive" className="w-full" size="sm">
+                <Youtube className="h-4 w-4 mr-2" />
+                Subscribe Channel 2
+              </Button>
+            </Link>
           </div>
-          <Button variant="destructive" className="w-full" size="sm">
-            <Youtube className="h-4 w-4 mr-2" />
-            YouTube
-          </Button>
-          <p className="text-xs text-gray-500 mt-2 text-center">3K subscribers</p>
         </CardContent>
       </Card>
 
