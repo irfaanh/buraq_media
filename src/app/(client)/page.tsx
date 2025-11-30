@@ -21,21 +21,23 @@ interface NewsItem {
 }
 
 export default async function HomePage() {
-  const result = await getPublicNewsList();
-  
-  
-  // SafeActionResult returns { data: { news } } or { serverError } or { validationErrors }
   let news: NewsItem[] = [];
   
-  if (result?.data?.news && Array.isArray(result.data.news)) {
-    news = result.data.news;
-  } else if (result?.serverError) {
-    console.error('Server error:', result.serverError);
-  } else if (result?.validationErrors) {
-    console.error('Validation errors:', result.validationErrors);
+  try {
+    const result = await getPublicNewsList();
+    
+    // SafeActionResult returns { data: { news } } or { serverError } or { validationErrors }
+    if (result?.data?.news && Array.isArray(result.data.news)) {
+      news = result.data.news;
+    } else if (result?.serverError) {
+      console.error('Server error:', result.serverError);
+    } else if (result?.validationErrors) {
+      console.error('Validation errors:', result.validationErrors);
+    }
+  } catch (error) {
+    console.error('Error fetching news:', error);
+    // Continue with empty array to prevent white screen
   }
-  
-  console.log('News array length:', news.length);
 
   return (
     <div className="min-h-screen bg-gray-50">
