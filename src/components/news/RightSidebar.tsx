@@ -7,9 +7,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { formatDate } from '@/lib/utils';
 
+interface SpecialNewsItem {
+  id: string;
+  title: string;
+  content: string;
+  date: Date;
+  image: string | null;
+  location: { id: string; name: string } | null;
+  category: { id: string; name: string } | null;
+}
+
 export default async function RightSidebar() {
-  const result = await getSpecialNews();
-  const specialNews = result?.data?.news || [];
+  let specialNews: SpecialNewsItem[] = [];
+
+  try {
+    const result = await getSpecialNews();
+    specialNews = (result?.data?.news || []) as SpecialNewsItem[];
+  } catch (error) {
+    console.error('Error fetching special news:', error);
+    // Continue with empty array to prevent crash
+  }
 
   return (
     <aside className="w-full space-y-6">
