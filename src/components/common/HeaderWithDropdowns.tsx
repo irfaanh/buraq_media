@@ -11,6 +11,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface HeaderWithDropdownsProps {
   locations: Array<{ id: string; name: string }>;
@@ -35,14 +36,7 @@ export default function HeaderWithDropdowns({ locations, categories }: HeaderWit
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left Side */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg group-hover:bg-white/30 transition-all duration-300">
-              <span className="text-white text-xl font-bold">B</span>
-            </div>
-            <div>
-              <h1 className="text-xl md:text-2xl font-bold text-white uppercase tracking-tight group-hover:scale-105 transition-transform duration-300">
-                Buraq Bulletin
-              </h1>
-            </div>
+            <Image src="/logo1.png" alt="Logo" width={80} height={80} />
           </Link>
 
           {/* Navigation - Right Side */}
