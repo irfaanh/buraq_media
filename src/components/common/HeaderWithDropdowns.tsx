@@ -36,7 +36,7 @@ export default function HeaderWithDropdowns({ locations, categories }: HeaderWit
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left Side */}
           <Link href="/" className="flex items-center gap-3 group">
-            <Image src="/logo1.png" alt="Logo" width={80} height={80} />
+            <Image src="/logo21.png" alt="Logo" width={80} height={80} />
           </Link>
 
           {/* Navigation - Right Side */}
