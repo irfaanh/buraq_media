@@ -31,12 +31,12 @@ export default function HeaderWithDropdowns({ locations, categories }: HeaderWit
   };
 
   return (
-    <header className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
+    <header className="w-full bg-gradient-to-r from-white via-red-500 to-red-800 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left Side */}
           <Link href="/" className="flex items-center gap-3 group">
-            <Image src="/logo21.png" alt="Logo" width={80} height={80} />
+            <Image src="/logo11.png" alt="Logo" width={80} height={80} />
           </Link>
 
           {/* Navigation - Right Side */}
@@ -48,7 +48,7 @@ export default function HeaderWithDropdowns({ locations, categories }: HeaderWit
                 className={cn(
                   'px-5 py-2.5 text-sm font-semibold transition-all duration-300 rounded-lg',
                   isActive('/')
-                    ? 'bg-white text-blue-700 shadow-md hover:shadow-lg hover:scale-105'
+                    ? 'bg-white text-red-700 shadow-md hover:shadow-lg hover:scale-105'
                     : 'text-white hover:bg-white/20 hover:text-white backdrop-blur-sm'
                 )}
               >
@@ -64,7 +64,7 @@ export default function HeaderWithDropdowns({ locations, categories }: HeaderWit
                   className={cn(
                     'px-5 py-2.5 text-sm font-semibold transition-all duration-300 rounded-lg',
                     pathname.startsWith('/location/')
-                      ? 'bg-white text-blue-700 shadow-md hover:shadow-lg hover:scale-105'
+                      ? 'bg-white text-red-700 shadow-md hover:shadow-lg hover:scale-105'
                       : 'text-white hover:bg-white/20 hover:text-white backdrop-blur-sm'
                   )}
                   onMouseEnter={() => setLocalNewsOpen(true)}
@@ -106,7 +106,7 @@ export default function HeaderWithDropdowns({ locations, categories }: HeaderWit
                   className={cn(
                     'px-5 py-2.5 text-sm font-semibold transition-all duration-300 rounded-lg',
                     pathname.startsWith('/category/')
-                      ? 'bg-white text-blue-700 shadow-md hover:shadow-lg hover:scale-105'
+                      ? 'bg-white text-red-700 shadow-md hover:shadow-lg hover:scale-105'
                       : 'text-white hover:bg-white/20 hover:text-white backdrop-blur-sm'
                   )}
                   onMouseEnter={() => setCategoryNewsOpen(true)}
@@ -167,7 +167,7 @@ export default function HeaderWithDropdowns({ locations, categories }: HeaderWit
                 className={cn(
                   'px-4 py-3 text-sm font-semibold rounded-lg transition-all duration-300',
                   isActive('/')
-                    ? 'bg-white text-blue-700 shadow-md'
+                    ? 'bg-white text-red-700 shadow-md'
                     : 'text-white hover:bg-white/20'
                 )}
               >

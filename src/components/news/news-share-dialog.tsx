@@ -26,12 +26,13 @@ export const NewsShareDialog = ({ news, open, setOpen }: NewsShareDialogProps) =
   // Format the news message in WhatsApp style
   const formatMessage = () => {
     const date = news.date ? formatDate(news.date) : new Date().toLocaleDateString();
-    // Use direct emoji characters (UTF-8 encoded)
-    const satelliteEmoji = '📡';
-    const downArrowEmoji = '👇';
-    const phoneEmoji = '📞';
-    const whatsappEmoji = '🪀';
-    const copyrightEmoji = '©️';
+    // Use simple text-based symbols that work universally
+    // These avoid encoding issues that cause question marks in WhatsApp
+    const satelliteEmoji = '📡'; // Keep satellite - usually works
+    const downArrowEmoji = '⬇'; // Simple down arrow without variation selector
+    const phoneEmoji = '📱'; // Mobile phone emoji
+    const whatsappEmoji = '💬'; // Speech balloon
+    const copyrightEmoji = '©'; // Copyright sign
     
     let message = `*${satelliteEmoji} ${news.title}*\n\n`;
     message += `*${date}*\n\n`;
@@ -65,7 +66,7 @@ export const NewsShareDialog = ({ news, open, setOpen }: NewsShareDialogProps) =
     }
     
     message += `-------------------------------------\n\n`;
-    message += `${copyrightEmoji}  www.koodathainews.in`;
+    message += `${copyrightEmoji}  www.buraqbulletin.in`;
     
     return message;
   };
@@ -75,9 +76,10 @@ export const NewsShareDialog = ({ news, open, setOpen }: NewsShareDialogProps) =
   const shareTitle = news.title;
 
   const handleWhatsAppShare = () => {
-    // Use proper UTF-8 encoding for emojis
+    // Use api.whatsapp.com which handles emoji encoding better than wa.me
+    // This endpoint is more reliable for emoji support
     const encodedMessage = encodeURIComponent(shareMessage);
-    const whatsappUrl = `https://wa.me/?text=${encodedMessage}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
   };
 

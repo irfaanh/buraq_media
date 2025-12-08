@@ -13,7 +13,6 @@ import {
 import { Button } from "../../components/ui/button";
 import { CategoryDeleteDialog } from "./category-delete-dialog";
 import { useState } from "react";
-import { formatDate } from "../../lib/utils";
 
 export const categoryColumns: ColumnDef<Category>[] = [
   {
@@ -37,19 +36,7 @@ export const categoryColumns: ColumnDef<Category>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => <div className="px-3">{row.getValue('name') as string}</div>,
-  },
-  {
-    accessorKey: "createdAt",
-    header: "Created At",
-    cell: ({ row }) => {
-      const date = row.getValue("createdAt") as string | Date;
-      return (
-        <div>
-          {date ? formatDate(date) : "-"}
-        </div>
-      );
-    },
+    cell: ({ row }) => <div className="max-w-[300px] truncate">{row.getValue('name') as string}</div>,
   },
   {
     id: "actions",
@@ -70,6 +57,7 @@ export const CategoryActions = ({ category }: { category: Category }) => {
         size="sm"
         onClick={() => setOpenEdit(true)}
         className="h-8 w-8 p-0"
+        title="Edit"
       >
         <Edit2 className="h-4 w-4" />
       </Button>
@@ -78,6 +66,7 @@ export const CategoryActions = ({ category }: { category: Category }) => {
         size="sm"
         onClick={() => setOpenDelete(true)}
         className="h-8 w-8 p-0 text-destructive hover:text-destructive"
+        title="Delete"
       >
         <Trash2 className="h-4 w-4" />
       </Button>
@@ -94,12 +83,4 @@ export const CategoryActions = ({ category }: { category: Category }) => {
     </div>
   );
 };
-
-
-
-
-
-
-
-
 
